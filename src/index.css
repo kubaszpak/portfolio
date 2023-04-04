@@ -2,7 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-#root {
+:root {
+	@apply text-slate-200;
+	font-family: "Poppins", sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	background-color: #020202;
+	/* background-color: rgb(31, 41, 55); */
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+#top {
 	max-width: 1280px;
 	margin: 0 auto;
 	width: 100%;
@@ -13,32 +30,20 @@
 	min-height: 100vh;
 }
 
-:root {
-	font-family: "Poppins", sans-serif;
-	line-height: 1.5;
-	font-weight: 400;
-
-	color-scheme: light dark;
-	color: white;
-	background-color: #020202;
-
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
+main {
+	text-align: center;
+	font-family: "Spicy Rice", cursive;
+	font-size: 16rem;
+	opacity: 0;
+	animation: 3s forwards ease-in-out fadeInFromB;
 }
 
-main {
-	font-family: "Spicy Rice", cursive;
-	font-size: 12rem;
-	line-height: 8rem;
-	opacity: 0;
-	animation: 5s forwards ease-in-out fadeInFromB;
+#szpak {
+	-webkit-text-stroke: 1px #cbd5e1;
 }
 
 p {
-	animation: 5s forwards ease-in-out fadeInFromB;
+	animation: 3s forwards ease-in-out fadeInFromB;
 }
 
 @keyframes fadeInFromB {
