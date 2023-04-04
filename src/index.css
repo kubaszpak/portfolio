@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 2rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+:root {
+	font-family: "Poppins", sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: white;
+	background-color: #020202;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+main {
+	font-family: "Spicy Rice", cursive;
+	font-size: 12rem;
+	line-height: 8rem;
+	opacity: 0;
+	animation: 5s forwards ease-in-out fadeInFromB;
+}
+
+p {
+	animation: 5s forwards ease-in-out fadeInFromB;
+}
+
+@keyframes fadeInFromB {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+header {
+	animation: 2s forwards fadeInFromT;
+}
+
+@keyframes fadeInFromT {
+	from {
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.app {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-width: 320px;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+
+.divider {
+	min-height: 150px;
+}
