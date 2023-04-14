@@ -1,66 +1,35 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import BackgroundBlur from "./components/BackgroundBlur";
+import Navbar from "./components/Navbar";
 
 function App() {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
-	const [parent, enableAnimations] = useAutoAnimate();
-	return (
-		<>
-			<div
-				className={`fixed inset-0 ${
-					sidebarOpen && "z-10"
-				} bg-black/20 backdrop-blur-sm dark:bg-slate-900/80`}
-				id="headlessui-dialog-overlay-8"
-				aria-hidden="true"
-				data-headlessui-state="open"
-				onClick={() => setSidebarOpen(false)}
-			></div>
+	const [parent] = useAutoAnimate();
+	const aboutSectionRef = useRef<HTMLDivElement | null>(null);
 
-			<div ref={parent}>
-				{sidebarOpen && <Sidebar sidebarOpen={sidebarOpen} />}
-			</div>
+	const scrollToView = (
+		sectionRef: React.MutableRefObject<HTMLDivElement | null>
+	) => {
+		sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+	};
+
+	return (
+		<div ref={parent}>
+			<BackgroundBlur
+				sidebarOpen={sidebarOpen}
+				setSidebarOpen={setSidebarOpen}
+			/>
+			{sidebarOpen && <Sidebar sidebarOpen={sidebarOpen} />}
+
 			<div className={`${sidebarOpen && "fixed overflow-hidden"}`}>
 				<div id="top">
-					<header className="flex">
-						<h2 className="mr-auto flex flex-1 justify-center">
-							kubaszpak.dev
-						</h2>
-						<ul className="hidden flex-1 justify-center gap-3 sm:flex">
-							<li>Home</li>
-							<li>About</li>
-							<li>Projects</li>
-							<li>Contact</li>
-						</ul>
-						<h2 className="ml-auto hidden flex-1 justify-center sm:flex">
-							Dark
-						</h2>
-						<button
-							data-drawer-target="default-sidebar"
-							data-drawer-toggle="default-sidebar"
-							aria-controls="default-sidebar"
-							type="button"
-							onClick={() => {
-								setSidebarOpen((prev) => !prev);
-							}}
-							className="inline-flex items-center rounded-lg text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
-						>
-							<span className="sr-only">Open sidebar</span>
-							<svg
-								className="h-6 w-6"
-								aria-hidden="true"
-								fill="currentColor"
-								viewBox="0 0 20 20"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									clip-rule="evenodd"
-									fill-rule="evenodd"
-									d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
-								></path>
-							</svg>
-						</button>
-					</header>
+					<Navbar
+						scrollToView={scrollToView}
+						setSidebarOpen={setSidebarOpen}
+						aboutSectionRef={aboutSectionRef}
+					/>
 					<div className="app">
 						<main className="text-8xl leading-[0.75] sm:text-[12rem] sm:leading-[8rem] md:text-[16rem] md:leading-[12rem]">
 							Jakub
@@ -76,9 +45,26 @@ function App() {
 						</p>
 					</div>
 				</div>
-				<div className="min-h-screen"></div>
+				<div
+					ref={aboutSectionRef}
+					className="mx-auto flex min-h-screen max-w-7xl flex-col items-center p-8 sm:flex-row sm:justify-around"
+				>
+					<p className="text-md mb-8 max-w-lg text-center sm:mb-0 sm:text-left">
+						Hi, my name is Jakub,
+						<br /> I've graduated Computer Science from the Wroclaw's University
+						of Science and Technology in March of 2023. I'd like to continue
+						developing my skills in creating beautiful user experiences on the
+						web. I'm looking for opportunities where I'll be able to learn more
+						about the frontend as well as the backend of web applications.
+					</p>
+					<img
+						className="personal max-w-xs opacity-90"
+						src="./src/assets/static/me.png"
+						alt="Personal photo"
+					/>
+				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
