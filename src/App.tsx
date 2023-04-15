@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import BackgroundBlur from "./components/BackgroundBlur";
 import Navbar from "./components/Navbar";
+import personalImage from "./assets/static/me.png";
 
 function App() {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -59,7 +60,7 @@ function App() {
 					</p>
 					<img
 						className="personal max-w-xs opacity-90"
-						src="./src/assets/static/me.png"
+						src={personalImage}
 						alt="Personal photo"
 					/>
 				</div>
