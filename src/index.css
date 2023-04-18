@@ -42,7 +42,7 @@ main {
 	-webkit-text-stroke: 1px #cbd5e1;
 }
 
-p {
+.animationFadeInFromB {
 	animation: 3s forwards ease-in-out fadeInFromB;
 }
 
@@ -92,7 +92,7 @@ body {
 	min-height: 150px;
 }
 
-.personal {
+.lighten {
 	-webkit-filter: drop-shadow(1px 3px 5px rgba(255, 255, 255, 0.5));
 	filter: drop-shadow(1px 3px 5px rgba(255, 255, 255, 0.5));
 }

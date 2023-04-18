@@ -4,15 +4,17 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 import BackgroundBlur from "./components/BackgroundBlur";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
+import ProjectsSection from "./components/ProjectsSection";
 
 function App() {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 	const [parent] = useAutoAnimate();
-	const aboutSectionRef = useRef<HTMLDivElement | null>(null);
+	const aboutSectionRef = useRef<HTMLDivElement>(
+		null
+	) as React.MutableRefObject<HTMLDivElement>;
+	const projectsSectionRef = useRef<HTMLDivElement>(null);
 
-	const scrollToView = (
-		sectionRef: React.MutableRefObject<HTMLDivElement | null>
-	) => {
+	const scrollToView = (sectionRef: React.MutableRefObject<HTMLDivElement>) => {
 		sectionRef.current?.scrollIntoView({ behavior: "smooth" });
 	};
 
@@ -39,7 +41,7 @@ function App() {
 								Szpak
 							</span>
 						</main>
-						<p className="mt-16 text-sm text-slate-300 md:text-lg">
+						<p className="animationFadeInFromB mt-16 text-sm text-slate-300 md:text-lg">
 							Fullstack Web Developer
 							<br />
 							based in Wroclav, Poland
@@ -47,6 +49,7 @@ function App() {
 					</div>
 				</div>
 				<AboutSection aboutSectionRef={aboutSectionRef} />
+				<ProjectsSection projectsSectionRef={projectsSectionRef} />
 			</div>
 		</div>
 	);
