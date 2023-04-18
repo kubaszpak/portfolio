@@ -1,18 +1,22 @@
+import { SidebarState } from "../App";
+
 interface NavbarProps {
+	setSidebarState: React.Dispatch<React.SetStateAction<SidebarState>>;
 	scrollToView: (sectionRef: React.MutableRefObject<HTMLDivElement>) => void;
-	setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	aboutSectionRef: React.MutableRefObject<HTMLDivElement>;
+	projectsSectionRef: React.MutableRefObject<HTMLDivElement>;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
 	scrollToView,
-	setSidebarOpen,
+	setSidebarState,
 	aboutSectionRef,
+	projectsSectionRef,
 }) => {
 	return (
 		<header className="sm:flex">
 			<h2 className="mr-auto flex justify-center sm:flex-1">
-				<a href="/" className="hover:brightness-200">
+				<a href="/" className="font-semibold hover:brightness-200">
 					kubaszpak.dev
 				</a>
 			</h2>
@@ -28,7 +32,12 @@ const Navbar: React.FC<NavbarProps> = ({
 				>
 					About
 				</li>
-				<li className="hover:cursor-pointer hover:brightness-200">Projects</li>
+				<li
+					className="hover:cursor-pointer hover:brightness-200"
+					onClick={() => scrollToView(projectsSectionRef)}
+				>
+					Projects
+				</li>
 				<li className="hover:cursor-pointer hover:brightness-200">Contact</li>
 			</ul>
 			<h2 className="ml-auto hidden flex-1 justify-center hover:cursor-pointer hover:brightness-200 sm:flex">
@@ -40,7 +49,12 @@ const Navbar: React.FC<NavbarProps> = ({
 				aria-controls="default-sidebar"
 				type="button"
 				onClick={() => {
-					setSidebarOpen((prev) => !prev);
+					setSidebarState((prev) => {
+						return {
+							...prev,
+							sidebarOpen: true,
+						};
+					});
 				}}
 				className="mt-4 inline-flex items-center rounded-lg text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 sm:hidden"
 			>

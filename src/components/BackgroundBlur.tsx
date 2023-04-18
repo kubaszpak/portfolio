@@ -1,11 +1,13 @@
+import { SidebarState } from "../App";
+
 interface BackgroundBlurProps {
 	sidebarOpen: boolean;
-	setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	setSidebarState: React.Dispatch<React.SetStateAction<SidebarState>>;
 }
 
 const BackgroundBlur: React.FC<BackgroundBlurProps> = ({
 	sidebarOpen,
-	setSidebarOpen,
+	setSidebarState,
 }) => {
 	return (
 		<div
@@ -15,7 +17,14 @@ const BackgroundBlur: React.FC<BackgroundBlurProps> = ({
 			id="headlessui-dialog-overlay-8"
 			aria-hidden="true"
 			data-headlessui-state="open"
-			onClick={() => setSidebarOpen(false)}
+			onClick={() =>
+				setSidebarState((prev) => {
+					return {
+						...prev,
+						sidebarOpen: false,
+					};
+				})
+			}
 		></div>
 	);
 };

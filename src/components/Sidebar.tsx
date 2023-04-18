@@ -1,18 +1,54 @@
 import { Sidebar as FlowbiteSidebar } from "flowbite-react";
+import { SidebarState } from "../App";
 
-export default function Sidebar({ sidebarOpen }: { sidebarOpen: boolean }) {
+interface SidebarProps {
+	aboutSectionRef: React.MutableRefObject<HTMLDivElement>;
+	projectsSectionRef: React.MutableRefObject<HTMLDivElement>;
+	setSidebarState: React.Dispatch<React.SetStateAction<SidebarState>>;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({
+	aboutSectionRef,
+	projectsSectionRef,
+	setSidebarState,
+}) => {
 	return (
 		<>
 			<FlowbiteSidebar className={`dark absolute right-0 z-10 h-screen`}>
 				<FlowbiteSidebar.Items>
 					<FlowbiteSidebar.ItemGroup>
-						<FlowbiteSidebar.Item href="#">Home</FlowbiteSidebar.Item>
-						<FlowbiteSidebar.Item href="#">About</FlowbiteSidebar.Item>
-						<FlowbiteSidebar.Item href="#">Projects</FlowbiteSidebar.Item>
-						<FlowbiteSidebar.Item href="#">Contact</FlowbiteSidebar.Item>
+						<FlowbiteSidebar.Logo href="/" img="ying_yang.png" imgAlt="Logo">
+							kubaszpak.dev
+						</FlowbiteSidebar.Logo>
+					</FlowbiteSidebar.ItemGroup>
+					<FlowbiteSidebar.ItemGroup>
+						<FlowbiteSidebar.Item href="/">Home</FlowbiteSidebar.Item>
+						<FlowbiteSidebar.Item
+							onClick={() => {
+								setSidebarState({
+									sidebarOpen: false,
+									scrollToSectionAfterClose: aboutSectionRef,
+								});
+							}}
+						>
+							About
+						</FlowbiteSidebar.Item>
+						<FlowbiteSidebar.Item
+							onClick={() => {
+								setSidebarState({
+									sidebarOpen: false,
+									scrollToSectionAfterClose: projectsSectionRef,
+								});
+							}}
+						>
+							Projects
+						</FlowbiteSidebar.Item>
+						<FlowbiteSidebar.Item>Contact</FlowbiteSidebar.Item>
 					</FlowbiteSidebar.ItemGroup>
 				</FlowbiteSidebar.Items>
 			</FlowbiteSidebar>
 		</>
 	);
-}
+};
+
+export default Sidebar;

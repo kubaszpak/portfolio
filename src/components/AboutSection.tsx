@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import personalImage from "../assets/static/fotka_circle.png";
+import personalImage from "../assets/static/me_circle.png";
 import useIsInViewport from "../utils/useIsInViewport";
 
 interface AboutSectionProps {
@@ -11,7 +11,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutSectionRef }) => {
 
 	useEffect(() => {
 		aboutSectionRef.current.classList.toggle("animationFadeInFromB");
-		console.log(isSectionIntersecting);
 	}, [isSectionIntersecting]);
 
 	return (
