@@ -14,7 +14,11 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 	const isSectionIntersecting = useIsInViewport(projectsSectionRef);
 
 	useEffect(() => {
-		projectsSectionRef.current.classList.toggle("animationFadeInFromB");
+		if (isSectionIntersecting) {
+			projectsSectionRef.current.classList.add("animationFadeInFromB");
+		} else {
+			projectsSectionRef.current.classList.remove("animationFadeInFromB");
+		}
 	}, [isSectionIntersecting]);
 
 	return (
