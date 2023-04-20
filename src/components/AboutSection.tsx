@@ -10,7 +10,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutSectionRef }) => {
 	const isSectionIntersecting = useIsInViewport(aboutSectionRef);
 
 	useEffect(() => {
-		aboutSectionRef.current.classList.toggle("animationFadeInFromB");
+		if (isSectionIntersecting) {
+			aboutSectionRef.current.classList.add("animationFadeInFromB");
+		} else {
+			aboutSectionRef.current.classList.remove("animationFadeInFromB");
+		}
 	}, [isSectionIntersecting]);
 
 	return (
