@@ -14,7 +14,7 @@ const Navbar: React.FC<NavbarProps> = ({
 	projectsSectionRef,
 }) => {
 	return (
-		<header className="sm:flex">
+		<header className="z-10 sm:flex">
 			<h2 className="mr-auto flex justify-center sm:flex-1">
 				<a href="/" className="font-semibold hover:brightness-200">
 					kubaszpak.dev

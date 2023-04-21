@@ -20,8 +20,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutSectionRef }) => {
 	return (
 		<div className="my-40">
 			<div
-				id="about"
 				ref={aboutSectionRef}
+				id="about"
 				className="mx-auto flex max-w-7xl flex-col items-center p-8 opacity-0 sm:flex-row sm:justify-around"
 			>
 				<p className="text-md mb-8 max-w-lg text-center sm:mb-0 sm:text-left">
