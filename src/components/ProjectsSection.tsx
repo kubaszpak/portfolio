@@ -38,7 +38,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 					/>
 					Kawa i trawa
 					<button
-						onClick={() => setChosenProject("Kawa i trawa")}
+						onClick={() => setChosenProject("kawa_trawa")}
 						type="button"
 						className="my-5 rounded-lg bg-gradient-to-r from-black via-slate-950 to-slate-900 px-5 py-2.5 text-center text-sm font-semibold text-slate-100 ring-2 ring-slate-100 hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-100"
 					>
@@ -54,7 +54,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 					Domky
 					<button
 						type="button"
-						onClick={() => setChosenProject("Domky")}
+						onClick={() => setChosenProject("domky")}
 						className="my-5 rounded-lg bg-gradient-to-r from-black via-slate-950 to-slate-900 px-5 py-2.5 text-center text-sm font-semibold text-slate-100 ring-2 ring-slate-100 hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-100"
 					>
 						Read more
@@ -70,7 +70,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 					<button
 						type="button"
 						className="my-5 rounded-lg bg-gradient-to-r from-black via-slate-950 to-slate-900 px-5 py-2.5 text-center text-sm font-semibold text-slate-100 ring-2 ring-slate-100 hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-100"
-						onClick={() => setChosenProject("Web portfolio")}
+						onClick={() => setChosenProject("portfolio")}
 					>
 						Read more
 					</button>

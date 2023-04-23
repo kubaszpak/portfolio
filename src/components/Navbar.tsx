@@ -52,14 +52,13 @@ const Navbar: React.FC<NavbarProps> = ({
 						? (localStorage.theme = "light")
 						: (localStorage.theme = "dark");
 					updateColorMode();
-					// TODO: check if user preference check should be deleted
 					setDarkModeEnabled(
 						document.documentElement.classList.contains("dark")
 					);
 				}}
 				className="ml-auto hidden flex-1 justify-center hover:cursor-pointer hover:brightness-200 sm:flex"
 			>
-				{darkModeEnabled ? "Light" : "Dark"}
+				{darkModeEnabled ? "Light mode" : "Dark mode"}
 			</h2>
 			<button
 				data-drawer-target="default-sidebar"

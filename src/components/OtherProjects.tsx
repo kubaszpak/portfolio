@@ -15,6 +15,22 @@ const OtherProjects: React.FC = () => {
 						Coding Quiz
 					</h5>
 				</Card>
+				<Card
+					// className="bg-gradient-to-r from-black via-slate-950 to-slate-900"
+					href="#"
+				>
+					<h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+						Coding Quiz
+					</h5>
+				</Card>
+				<Card
+					// className="bg-gradient-to-r from-black via-slate-950 to-slate-900"
+					href="#"
+				>
+					<h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+						Coding Quiz
+					</h5>
+				</Card>
 			</div>
 		</div>
 	);
