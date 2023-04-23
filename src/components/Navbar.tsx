@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { SidebarState } from "../App";
+import updateColorMode from "../utils/handlePrefferedColorMode";
 
 interface NavbarProps {
 	setSidebarState: React.Dispatch<React.SetStateAction<SidebarState>>;
@@ -13,6 +15,10 @@ const Navbar: React.FC<NavbarProps> = ({
 	aboutSectionRef,
 	projectsSectionRef,
 }) => {
+	const [darkModeEnabled, setDarkModeEnabled] = useState(
+		document.documentElement.classList.contains("dark")
+	);
+
 	return (
 		<header className="z-10 sm:flex">
 			<h2 className="mr-auto flex justify-center sm:flex-1">
@@ -40,8 +46,20 @@ const Navbar: React.FC<NavbarProps> = ({
 				</li>
 				<li className="hover:cursor-pointer hover:brightness-200">Contact</li>
 			</ul>
-			<h2 className="ml-auto hidden flex-1 justify-center hover:cursor-pointer hover:brightness-200 sm:flex">
-				Dark
+			<h2
+				onClick={() => {
+					document.documentElement.classList.contains("dark")
+						? (localStorage.theme = "light")
+						: (localStorage.theme = "dark");
+					updateColorMode();
+					// TODO: check if user preference check should be deleted
+					setDarkModeEnabled(
+						document.documentElement.classList.contains("dark")
+					);
+				}}
+				className="ml-auto hidden flex-1 justify-center hover:cursor-pointer hover:brightness-200 sm:flex"
+			>
+				{darkModeEnabled ? "Light" : "Dark"}
 			</h2>
 			<button
 				data-drawer-target="default-sidebar"

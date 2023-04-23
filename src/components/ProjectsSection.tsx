@@ -4,6 +4,7 @@ import kawa_trawa from "../assets/static/kawa_trawa.png";
 import { useEffect, useState } from "react";
 import useIsInViewport from "../utils/useIsInViewport";
 import ProjectDetailsModal, { Project } from "./ProjectDetailsModal";
+import OtherProjects from "./OtherProjects";
 
 interface ProjectsSectionProps {
 	projectsSectionRef: React.MutableRefObject<HTMLDivElement>;
@@ -24,9 +25,11 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 	}, [isSectionIntersecting]);
 
 	return (
-		<div className="my-40 opacity-0" ref={projectsSectionRef}>
-			<h1 className="text-center text-2xl font-semibold">Projects</h1>
-			<div className="mx-auto max-w-7xl p-8 xl:flex">
+		<div className="my-40 p-8 opacity-0" ref={projectsSectionRef}>
+			<h1 className="mb-8 text-center text-2xl font-semibold">
+				Recent projects
+			</h1>
+			<div className="mx-auto max-w-7xl xl:flex">
 				<div className="mb-8 flex flex-1 flex-col items-center xl:mt-10">
 					<img
 						className="lighten mb-3 sm:max-w-xs"
@@ -77,6 +80,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 					project={chosenProject}
 				/>
 			</div>
+			<OtherProjects />
 		</div>
 	);
 };
