@@ -22,13 +22,13 @@ const Navbar: React.FC<NavbarProps> = ({
 	return (
 		<header className="z-10 sm:flex">
 			<h2 className="mr-auto flex justify-center sm:flex-1">
-				<a href="/" className="font-semibold hover:brightness-200">
+				<a href="#" className="font-semibold hover:brightness-200">
 					kubaszpak.dev
 				</a>
 			</h2>
 			<ul className="hidden flex-1 justify-center gap-3 sm:flex">
 				<li>
-					<a href="/" className="hover:brightness-200">
+					<a href="#" className="hover:brightness-200">
 						Home
 					</a>
 				</li>

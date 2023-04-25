@@ -68,14 +68,14 @@ const ProjectDetailsModal: React.FC<{
 				{!!project && (
 					<>
 						<a
-							href="https://github.com/kubaszpak/domky"
+							href={projects[project].codeLink}
 							target="_blank"
 							className="rounded-lg bg-gradient-to-r from-black via-slate-950 to-slate-900 px-5 py-2.5 text-center text-sm font-semibold text-slate-100 ring-2 ring-slate-100 hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-neutral-300 dark:focus:ring-neutral-100"
 						>
 							Code
 						</a>
 						<a
-							href="https://domky.vercel.app/"
+							href={projects[project].siteLink}
 							target="_blank"
 							className="rounded-lg px-5 py-2.5 text-center text-sm font-semibold text-slate-950 ring-2 ring-slate-950 hover:bg-gradient-to-bl focus:outline-none focus:ring-4 dark:focus:ring-neutral-100"
 						>

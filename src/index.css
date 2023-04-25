@@ -94,6 +94,9 @@ body {
 .lighten {
 	-webkit-filter: drop-shadow(1px 3px 5px rgba(255, 255, 255, 0.5));
 	filter: drop-shadow(1px 3px 5px rgba(255, 255, 255, 0.5));
+
+	/* light mode */
+	/* filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.75)); */
 }
 
 .group > span {
