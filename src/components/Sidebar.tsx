@@ -1,5 +1,6 @@
 import { Sidebar as FlowbiteSidebar } from "flowbite-react";
 import { SidebarState } from "../App";
+import updateColorMode from "../utils/handlePrefferedColorMode";
 
 interface SidebarProps {
 	aboutSectionRef: React.MutableRefObject<HTMLDivElement>;
@@ -14,7 +15,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 }) => {
 	return (
 		<>
-			<FlowbiteSidebar className={`dark absolute right-0 z-10 h-screen`}>
+			<FlowbiteSidebar className={`absolute right-0 z-10 h-screen`}>
 				<FlowbiteSidebar.Items>
 					<FlowbiteSidebar.ItemGroup>
 						<FlowbiteSidebar.Logo href="/" img="ying_yang.png" imgAlt="Logo">
@@ -44,6 +45,18 @@ const Sidebar: React.FC<SidebarProps> = ({
 							Projects
 						</FlowbiteSidebar.Item>
 						<FlowbiteSidebar.Item>Contact</FlowbiteSidebar.Item>
+						<FlowbiteSidebar.ItemGroup>
+							<FlowbiteSidebar.Item
+								onClick={() => {
+									document.documentElement.classList.contains("dark")
+										? (localStorage.theme = "light")
+										: (localStorage.theme = "dark");
+									updateColorMode();
+								}}
+							>
+								Toggle Light Mode
+							</FlowbiteSidebar.Item>
+						</FlowbiteSidebar.ItemGroup>
 					</FlowbiteSidebar.ItemGroup>
 				</FlowbiteSidebar.Items>
 			</FlowbiteSidebar>

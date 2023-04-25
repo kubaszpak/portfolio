@@ -7,15 +7,16 @@
 	line-height: 1.5;
 	font-weight: 400;
 
-	/* dark mode */
-	@apply text-slate-200;
-	background-color: #020202;
-
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
+	@apply bg-white text-slate-800;
+}
+
+:root.dark {
+	@apply bg-neutral-950 text-slate-200;
 }
 
 #top {
@@ -38,7 +39,7 @@ main {
 }
 
 #szpak {
-	-webkit-text-stroke: 1px #cbd5e1;
+	-webkit-text-stroke: 3px #cbd5e1;
 }
 
 .animationFadeInFromB {
@@ -92,11 +93,13 @@ body {
 }
 
 .lighten {
-	-webkit-filter: drop-shadow(1px 3px 5px rgba(255, 255, 255, 0.5));
-	filter: drop-shadow(1px 3px 5px rgba(255, 255, 255, 0.5));
+	-webkit-filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.75));
+	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.75));
+}
 
-	/* light mode */
-	/* filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.75)); */
+.dark .lighten {
+	-webkit-filter: drop-shadow(1px 1px 3px rgba(255, 255, 255, 0.5)) !important;
+	filter: drop-shadow(1px 1px 3px rgba(255, 255, 255, 0.5)) !important;
 }
 
 .group > span {

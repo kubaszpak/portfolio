@@ -7,6 +7,7 @@ import {
 	SiPrisma,
 	SiReact,
 	SiSocketdotio,
+	SiTailwindcss,
 	SiTrpc,
 	SiTypescript,
 } from "react-icons/si";
@@ -63,6 +64,10 @@ const projects = {
 			<>
 				React
 				<SiReact className="ml-3 inline" size={36} />
+			</>,
+			<>
+				Tailwind CSS
+				<SiTailwindcss className="ml-3 inline" size={36} />
 			</>,
 			<>
 				MySQL
@@ -146,6 +151,10 @@ const projects = {
 			<>
 				Typescript
 				<SiTypescript className="ml-3 inline" size={36} />
+			</>,
+			<>
+				Tailwind CSS
+				<SiTailwindcss className="ml-3 inline" size={36} />
 			</>,
 		],
 		codeLink: "https://github.com/kubaszpak/portfolio",

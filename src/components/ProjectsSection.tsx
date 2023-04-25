@@ -25,7 +25,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 	}, [isSectionIntersecting]);
 
 	return (
-		<div className="my-40 p-8 opacity-0" ref={projectsSectionRef}>
+		<div className="px-8 py-40 opacity-0" ref={projectsSectionRef}>
 			<h1 className="mb-8 text-center text-2xl font-semibold">
 				Recent projects
 			</h1>

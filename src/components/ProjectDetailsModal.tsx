@@ -49,7 +49,7 @@ const ProjectDetailsModal: React.FC<{
 							<Accordion.Panel>
 								<Accordion.Title>Technologies</Accordion.Title>
 								<Accordion.Content>
-									<ul className="circle-list mx-5">
+									<ul className="circle-list mx-5 text-slate-800 dark:text-slate-200">
 										{projects[project].technologies.map((technology, idx) => {
 											return (
 												<li key={idx} className="my-1">
