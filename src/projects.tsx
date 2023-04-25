@@ -43,8 +43,10 @@ const projects = {
 	kawa_trawa: {
 		title: "Kawa i trawa",
 		images: [kawaTrawaLandingPage],
-		description: " ",
-		technologies: [],
+		description: ``,
+		technologies: [
+
+		],
 	},
 	portfolio: {
 		title: "Web portfolio",
