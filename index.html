@@ -13,7 +13,13 @@
 		<title>kubaszpak.dev</title>
 	</head>
 	<body>
+		<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+			<input type="text" name="name" />
+			<input type="email" name="email" />
+			<textarea name="message"></textarea>
+		</form>
 		<div id="root"></div>
+		<!-- A little help for the Netlify post-processing bots -->
 		<script type="module" src="/src/main.tsx"></script>
 	</body>
 </html>

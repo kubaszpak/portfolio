@@ -5,6 +5,7 @@ import updateColorMode from "../utils/handlePrefferedColorMode";
 interface SidebarProps {
 	aboutSectionRef: React.MutableRefObject<HTMLDivElement>;
 	projectsSectionRef: React.MutableRefObject<HTMLDivElement>;
+	contactsSectionRef: React.MutableRefObject<HTMLDivElement>;
 	setSidebarState: React.Dispatch<React.SetStateAction<SidebarState>>;
 }
 
@@ -12,6 +13,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 	aboutSectionRef,
 	projectsSectionRef,
 	setSidebarState,
+	contactsSectionRef,
 }) => {
 	return (
 		<>
@@ -44,7 +46,16 @@ const Sidebar: React.FC<SidebarProps> = ({
 						>
 							Projects
 						</FlowbiteSidebar.Item>
-						<FlowbiteSidebar.Item>Contact</FlowbiteSidebar.Item>
+						<FlowbiteSidebar.Item
+							onClick={() => {
+								setSidebarState({
+									sidebarOpen: false,
+									scrollToSectionAfterClose: contactsSectionRef,
+								});
+							}}
+						>
+							Contact
+						</FlowbiteSidebar.Item>
 						<FlowbiteSidebar.ItemGroup>
 							<FlowbiteSidebar.Item
 								onClick={() => {

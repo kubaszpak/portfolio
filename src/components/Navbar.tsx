@@ -7,6 +7,7 @@ interface NavbarProps {
 	scrollToView: (sectionRef: React.MutableRefObject<HTMLDivElement>) => void;
 	aboutSectionRef: React.MutableRefObject<HTMLDivElement>;
 	projectsSectionRef: React.MutableRefObject<HTMLDivElement>;
+	contactSectionRef: React.MutableRefObject<HTMLDivElement>;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -14,6 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({
 	setSidebarState,
 	aboutSectionRef,
 	projectsSectionRef,
+	contactSectionRef,
 }) => {
 	const [darkModeEnabled, setDarkModeEnabled] = useState(
 		document.documentElement.classList.contains("dark")
@@ -44,7 +46,12 @@ const Navbar: React.FC<NavbarProps> = ({
 				>
 					Projects
 				</li>
-				<li className="hover:cursor-pointer hover:brightness-200">Contact</li>
+				<li
+					onClick={() => scrollToView(contactSectionRef)}
+					className="hover:cursor-pointer hover:brightness-200"
+				>
+					Contact
+				</li>
 			</ul>
 			<h2
 				onClick={() => {

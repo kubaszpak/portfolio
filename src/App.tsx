@@ -4,6 +4,7 @@ import BackgroundBlur from "./components/BackgroundBlur";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
+import ContactForm from "./components/ContactForm";
 
 export interface SidebarState {
 	sidebarOpen: boolean;
@@ -20,6 +21,9 @@ function App() {
 		null
 	) as React.MutableRefObject<HTMLDivElement>;
 	const projectsSectionRef = useRef<HTMLDivElement>(
+		null
+	) as React.MutableRefObject<HTMLDivElement>;
+	const contactSectionRef = useRef<HTMLDivElement>(
 		null
 	) as React.MutableRefObject<HTMLDivElement>;
 
@@ -49,6 +53,7 @@ function App() {
 					setSidebarState={setSidebarState}
 					aboutSectionRef={aboutSectionRef}
 					projectsSectionRef={projectsSectionRef}
+					contactsSectionRef={contactSectionRef}
 				/>
 			)}
 			<div>
@@ -61,6 +66,7 @@ function App() {
 							scrollToView={scrollToView}
 							aboutSectionRef={aboutSectionRef}
 							projectsSectionRef={projectsSectionRef}
+							contactSectionRef={contactSectionRef}
 						/>
 						<div className="app">
 							<main className="text-8xl leading-[0.75] sm:text-[12rem] sm:leading-[8rem] md:text-[16rem] md:leading-[12rem]">
@@ -82,12 +88,19 @@ function App() {
 						</div>
 					</div>
 					<AboutSection aboutSectionRef={aboutSectionRef} />
-					<div className="min-h-[10rem]" />
+					<Divider />
 					<ProjectsSection projectsSectionRef={projectsSectionRef} />
+					<Divider />
+					<ContactForm contactSectionRef={contactSectionRef} />
+					<div className="min-h-[5rem]" />
 				</div>
 			</div>
 		</>
 	);
 }
+
+const Divider = () => {
+	return <div className="min-h-[10rem]" />;
+};
 
 export default App;
