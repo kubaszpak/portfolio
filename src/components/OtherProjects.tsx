@@ -45,7 +45,7 @@ const OtherProjects: React.FC = () => {
 							className="bg-gradient-to-r from-black via-slate-950 to-slate-900"
 						>
 							<a href={project.link} target="_blank">
-								<h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+								<h5 className="text-2xl font-bold tracking-tight text-white">
 									{project.name}
 								</h5>
 							</a>
