@@ -142,7 +142,7 @@ const projects = {
 		title: "Web portfolio",
 		images: [portfolioLandingPage],
 		description:
-			"A React frontend-only website designed to represent the skills learned in programming so far. The application uses Tailwind CSS for styling with the Flowbite add-on",
+			"A React frontend-only website designed to represent the skills learned in programming so far. The application uses Tailwind CSS for styling with the Flowbite add-on.",
 		technologies: [
 			<>
 				React
