@@ -1,6 +1,6 @@
-import domky from "../assets/static/domky.png";
-import portfolio from "../assets/static/portfolio.png";
-import kawa_trawa from "../assets/static/kawa_trawa.png";
+import domky from "../assets/static/domky/domky_lading_page.png";
+import portfolio from "../assets/static/portfolio/portfolio.png";
+import kawa_trawa from "../assets/static/kawa_trawa/kawa_trawa.png";
 import { useEffect, useState } from "react";
 import useIsInViewport from "../utils/useIsInViewport";
 import ProjectDetailsModal, { Project } from "./ProjectDetailsModal";

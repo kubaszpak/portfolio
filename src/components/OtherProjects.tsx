@@ -29,13 +29,17 @@ const otherProjects = [
 		name: "Face Recognition",
 		link: "https://github.com/kubaszpak/python_face_recognition",
 	},
+	{
+		name: "Data structures time complexity analysis",
+		link: "https://github.com/kubaszpak/data_structures_time_analyze",
+	},
 ];
 
 const OtherProjects: React.FC = () => {
 	return (
 		<div>
 			<h1 className="my-10 text-center text-xl font-semibold">
-				Other projects:
+				Other projects
 			</h1>
 			<div className="mx-auto flex max-w-3xl flex-col gap-3">
 				{otherProjects.map((project, idx) => {
