@@ -8,4 +8,12 @@ A Typescript React frontend-only website designed in Figma to represent the skil
 [Link](https://kubaszpak.netlify.app/)
 <br/>
 
-![](git-images/1.png)
+![Landing page](src/assets/static/portfolio/portfolio.png)
+
+![Landing page - light mode](src/assets/static/portfolio/portfolioLight.png)
+
+![About section](src/assets/static/portfolio/portfolioAbout.png)
+
+![Projects section](src/assets/static/portfolio/portfolioProjects.png)
+
+![Contact form](src/assets/static/portfolio/portfolioContact.png)
