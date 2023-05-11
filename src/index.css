@@ -30,12 +30,16 @@
 	min-height: 100vh;
 }
 
-main {
+#split-name {
 	text-align: center;
 	font-family: "Spicy Rice", cursive;
 	font-size: 16rem;
+}
+
+.char {
+	transform: translateY(115px);
+	transition: transform 0.5s;
 	opacity: 0;
-	animation: 3s forwards ease-in-out fadeInFromB;
 }
 
 #szpak {
