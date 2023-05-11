@@ -90,7 +90,7 @@ function App() {
 								<br />
 								<span
 									id="szpak"
-									className="text-9xl leading-[0.75] sm:text-[14rem] sm:leading-[8rem] md:text-[17rem] md:leading-[12rem] lg:text-[20rem]"
+									className="text-[7rem] leading-[0.75] sm:text-[14rem] sm:leading-[8rem] md:text-[17rem] md:leading-[12rem] lg:text-[20rem]"
 								>
 									Szpak
 								</span>
