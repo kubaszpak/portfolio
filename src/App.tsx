@@ -99,7 +99,7 @@ function App() {
 							<p className="animationFadeInFromB mt-16 text-sm md:text-lg">
 								Fullstack Web Developer
 								<br />
-								based in Wroclav, Poland
+								based in Wroclaw, Poland
 							</p>
 						</div>
 					</div>
