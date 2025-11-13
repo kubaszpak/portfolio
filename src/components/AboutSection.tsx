@@ -26,9 +26,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutSectionRef }) => {
 			>
 				<p className="text-md mb-8 max-w-lg text-center sm:mb-0 sm:text-left">
 					Hi, my name is Jakub,
-					<br />I graduated from the Wroclaw University of Science and
-					Technology with a degree in Computer Science in March of 2023. I'd
-					like to continue developing my skills in creating beautiful user
+					<br />I graduated from the Technical Academy of
+					Informatics in Applied Sciences with a degree in Programming in November of 2025.
+					I'd like to continue developing my skills in creating beautiful user
 					experiences on the web. I'm looking for opportunities where I'll be
 					able to learn more about the frontend as well, as the backend of web
 					applications.
